@@ -20,6 +20,11 @@ export const routes: Routes = [
             import('../author/author-list/author-list.page')
             .then(m => m.AuthorListPage)
     },
+    { path: 'lendings', 
+        loadComponent: () => 
+            import('../lending/lending-list/lending-list.page')
+            .then(m => m.LendingListPage)
+    },
     { path: 'games', 
         loadComponent: () => 
                 import('../game/game-list/game-list.page')

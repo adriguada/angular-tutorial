@@ -27,7 +27,7 @@ import { GameItem } from './game-item/game-item';
         MatFormFieldModule,
         MatInputModule,
         MatSelectModule,
-        GameItem
+        GameItem,
     ],
     templateUrl: './game-list.page.html',
     styleUrl: './game-list.page.scss',
