@@ -1,4 +1,4 @@
-import { Component, LOCALE_ID, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -36,11 +36,10 @@ import { MatNativeDateModule } from '@angular/material/core';
         MatFormFieldModule,
         FormsModule,
         MatDatepickerModule,
-        MatNativeDateModule,
     ],
     templateUrl: './lending-list.page.html',
     styleUrl: './lending-list.page.scss',
-    providers: [DatePipe]
+    providers: [ DatePipe ]
 })
 
 export class LendingListPage implements OnInit {
