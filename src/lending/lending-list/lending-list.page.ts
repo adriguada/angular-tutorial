@@ -66,7 +66,6 @@ export class LendingListPage implements OnInit {
         this.gameService.getGames().subscribe((games) => this.games.set(games));
     }
 
-    
     onFilterChange() {
         this.pageNumber = 0;
         this.loadPage();
@@ -75,7 +74,6 @@ export class LendingListPage implements OnInit {
     onPageChange(event: PageEvent) {
         this.loadPage(event);
     }
-
 
     onCleanFilter(): void {
         this.filterGame.set(null);

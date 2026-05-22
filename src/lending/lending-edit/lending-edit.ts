@@ -73,8 +73,8 @@ export class LendingEdit implements OnInit {
     onSave() {
         const lending: Lending = {
             id: this.id(),
-            loanDate: this.loanDate(),
-            returnDate: this.returnDate(),
+            loanDate: this.formatDate(this.loanDate()),
+            returnDate: this.formatDate(this.returnDate()),
             game: this.games().find(g => g.id === this.game()?.id) ?? null,
             customer: this.customers().find(c => c.id === this.customer()?.id) ?? null,
         };
@@ -82,6 +82,18 @@ export class LendingEdit implements OnInit {
         this.lendingService.saveLending(lending).subscribe(() => {
             this.dialogRef.close(true);
         });
+    }
+
+    private formatDate(date: Date | null): Date | null {
+        if (!date) return null;
+
+        
+        return new Date(Date.UTC(
+            date.getFullYear(),
+            date.getMonth(),
+            date.getDate()
+        ));
+
     }
 
     onClose() {
