@@ -3,8 +3,8 @@ import { Game } from "../../game/model/game";
 
 export class Lending {
     id: number;
-    loanDate: string;
-    returnDate: string;
+    loanDate: Date;
+    returnDate: Date;
     customer: Customer;
     game: Game;
 }

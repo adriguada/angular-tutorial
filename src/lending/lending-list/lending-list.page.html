@@ -38,7 +38,7 @@
 
         <div class="buttons">
             <button mat-stroked-button (click)="onCleanFilter()">Limpiar</button>
-            <button mat-stroked-button (click)="loadPage()">Filtrar</button>
+            <button mat-stroked-button (click)="onFilterChange()">Filtrar</button>
         </div>
     </div>
 
@@ -84,7 +84,7 @@
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table> 
 
-    <mat-paginator (page)="loadPage($event)" [pageSizeOptions]="[5, 10, 20]" [pageIndex]="pageNumber" [pageSize]="pageSize" [length]="totalElements" showFirstLastButtons></mat-paginator>
+    <mat-paginator (page)="onPageChange($event)" [pageSizeOptions]="[5, 10, 20]" [pageIndex]="pageNumber" [pageSize]="pageSize" [length]="totalElements" showFirstLastButtons></mat-paginator>
 
     <div class="buttons">
         <button mat-flat-button color="primary" (click)="createLending()">Nuevo préstamo</button> 

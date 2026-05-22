@@ -19,7 +19,6 @@ import { GameService } from '../../game/game.service';
 import { CustomerService } from '../../customer/customer.service';
 import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 
 @Component({
     selector: 'app-lending-list',
@@ -66,6 +65,17 @@ export class LendingListPage implements OnInit {
         this.customerService.getCustomers().subscribe((customers) => this.customers.set(customers));
         this.gameService.getGames().subscribe((games) => this.games.set(games));
     }
+
+    
+    onFilterChange() {
+        this.pageNumber = 0;
+        this.loadPage();
+    }
+
+    onPageChange(event: PageEvent) {
+        this.loadPage(event);
+    }
+
 
     onCleanFilter(): void {
         this.filterGame.set(null);

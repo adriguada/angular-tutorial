@@ -9,7 +9,7 @@ import { MyDateAdapter } from '../core/date-adapter/MyDateAdapter';
 
 const ES_DATE_FORMATS = {
     parse: {
-        dateInput: 'DD/MM/YYYY'
+        dateInput: 'yyyy-MM-dd'
     },
 
     display: {

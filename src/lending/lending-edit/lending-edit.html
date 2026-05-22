@@ -31,16 +31,32 @@
             <mat-error>El nombre no puede estar vacío</mat-error>
         </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Fecha de préstamo</mat-label>
-            <input type="text" matInput placeholder="Fecha" [(ngModel)]="loanDate" name="loanDate" required>
-            <mat-error>La fecha de préstamo no puede estar vacía</mat-error>
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha préstamo</mat-label>
+            <input 
+                matInput 
+                [matDatepicker]="pickerLoan" 
+                [(ngModel)]="loanDate" name="loanDate">
+
+            <mat-datepicker-toggle
+                matSuffix
+                [for]="pickerLoan">
+            </mat-datepicker-toggle>
+            <mat-datepicker #pickerLoan></mat-datepicker>
         </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Fecha de devolución</mat-label>
-            <input type="text" matInput placeholder="Fecha" [(ngModel)]="returnDate" name="returnDate" required>
-            <mat-error>La fecha de devolución no puede estar vacía</mat-error>
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha devolución</mat-label>
+            <input 
+                matInput 
+                [matDatepicker]="pickerReturn" 
+                [(ngModel)]="returnDate" name="returnDate">
+
+            <mat-datepicker-toggle
+                matSuffix
+                [for]="pickerReturn">
+            </mat-datepicker-toggle>
+            <mat-datepicker #pickerReturn></mat-datepicker>
         </mat-form-field>
     </form>
 

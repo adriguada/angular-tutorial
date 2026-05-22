@@ -11,6 +11,8 @@ import { Game } from '../../game/model/game';
 import { Customer } from '../../customer/model/customer';
 import { CustomerService } from '../../customer/customer.service';
 import { GameService } from '../../game/game.service';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-lending-edit',
@@ -21,8 +23,10 @@ import { GameService } from '../../game/game.service';
       MatFormFieldModule, 
       MatInputModule, 
       MatButtonModule,
-      MatSelectModule
+      MatSelectModule,
+      MatDatepickerModule
     ],
+    providers: [ DatePipe ],
     templateUrl: './lending-edit.html',
     styleUrl: './lending-edit.scss',
 })
@@ -33,12 +37,13 @@ export class LendingEdit implements OnInit {
     protected readonly gameService = inject(GameService)
     protected readonly dialogRef = inject(MatDialogRef<LendingEdit>);
     protected readonly data = inject(MAT_DIALOG_DATA);
+    protected readonly datePipe = inject(DatePipe);
 
     protected readonly id = signal<number | null>(null);
     protected readonly game = signal<Game | null>(null);
     protected readonly customer = signal<Customer | null>(null);
-    protected readonly loanDate = signal<string | null>(null);
-    protected readonly returnDate = signal<string | null>(null);
+    protected readonly loanDate = signal<Date | null>(null);
+    protected readonly returnDate = signal<Date | null>(null);
 
     protected readonly games = signal<Game[]>([]);
     protected readonly customers = signal<Customer[]>([]);
